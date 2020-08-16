@@ -37,7 +37,9 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
+
   background(255);
+  Engine.update(engine);
   rope1.display();
   rope2.display();
   rope3.display();
@@ -51,6 +53,12 @@ function draw() {
   ball5.display();
   drawSprites();
  
+}
+function keyPressed(){
+
+	if (keyCode===32){
+		Matter.Body.applyForce(ball1.body,ball1.body.position,{x:-50,y:-45});
+	}
 }
 
 

@@ -3,12 +3,13 @@ class Ball {
     constructor(x, y,r) {
       var options = {
           isStatic:false,
-          'restitution':0.3,
-          'friction':1.0,
-          'density':1.2
+          'restitution':1.0,
+          'friction':0,
+          'density':0.8
       }
-      this.body = Bodies.circle(x, y, 10, options);
       this.radius = r;
+      this.body = Bodies.circle(x, y, this.radius, options);
+      
       
       
       World.add(world, this.body);
